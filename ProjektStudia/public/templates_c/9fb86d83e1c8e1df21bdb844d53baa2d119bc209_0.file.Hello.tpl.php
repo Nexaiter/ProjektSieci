@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-02 21:15:23
+/* Smarty version 4.3.0, created on 2023-06-09 18:20:12
   from 'C:\xampp\htdocs\ProjektStudia\app\views\Hello.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_647a3fcb6ada20_53617108',
+  'unifunc' => 'content_6483513c2445d4_34852031',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647a3fcb6ada20_53617108 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6483513c2445d4_34852031 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 

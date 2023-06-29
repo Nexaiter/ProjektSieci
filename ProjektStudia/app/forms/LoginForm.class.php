@@ -4,6 +4,6 @@ namespace app\forms;
 
 class LoginForm {
 	public $login;
-	public $password;
-    public $permission;
-} 
+	public $pass;
+	public $permission;
+}
