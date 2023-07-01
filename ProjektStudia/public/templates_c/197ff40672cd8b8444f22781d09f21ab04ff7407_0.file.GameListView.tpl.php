@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-30 20:26:39
+/* Smarty version 4.3.0, created on 2023-07-01 12:50:58
   from 'C:\xampp\htdocs\ProjektStudia\app\views\GameListView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_649f1e5fe5d575_64844408',
+  'unifunc' => 'content_64a00512cd1340_76866266',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '197ff40672cd8b8444f22781d09f21ab04ff7407' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\GameListView.tpl',
-      1 => 1688149599,
+      1 => 1688208657,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_649f1e5fe5d575_64844408 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a00512cd1340_76866266 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektStudia\\lib\\smarty\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE HTML>
@@ -34,8 +34,10 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektSt
 		<title>Massively by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -119,15 +121,20 @@ $_smarty_tpl->tpl_vars['g']->do_else = false;
                                 <p><?php echo $_smarty_tpl->tpl_vars['g']->value["description"];?>
 </p>
                                 <ul class="actions special">
-                                    <li><a class="button">guzik</a></li>
+									<?php if (Core\RoleUtils::inRole("user")) {?>
+										<li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+createOrder/<?php echo $_smarty_tpl->tpl_vars['g']->value['id'];?>
+">Zamów</a></li>
+									<?php }?> 
                                 </ul>
+
+
+								
 								</article>
                              <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
-                             
-                                    
 								
 							</section>
 

@@ -7,6 +7,7 @@ use core\Utils;
 use core\RoleUtils;
 use core\ParamUtils;
 use app\forms\LoginForm;
+use core\SessionUtils;
 
 class LoginController {
 
@@ -41,6 +42,7 @@ class LoginController {
         }
             try {
                 $this->record = App::getDB()->select("user", [
+                    "id",
                     "login",
                     "password",
                     "permission"
@@ -74,7 +76,9 @@ class LoginController {
     public function action_login() {
         if ($this->validate()) {
             //zalogowany => przekieruj na główną akcję (z przekazaniem messages przez sesję)
+            SessionUtils::store("userID", $this->record[0]["id"]);
             Utils::addErrorMessage('Poprawnie zalogowano do systemu');
+            Utils::addInfoMessage($this->record[0]["id"]);
             App::getRouter()->forwardTo("shopMainShow");
         } else {
             //niezalogowany => pozostań na stronie logowania

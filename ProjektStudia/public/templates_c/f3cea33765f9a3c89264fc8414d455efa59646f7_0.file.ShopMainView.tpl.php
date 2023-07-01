@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-29 22:06:57
+/* Smarty version 4.3.0, created on 2023-07-01 15:08:13
   from 'C:\xampp\htdocs\ProjektStudia\app\views\ShopMainView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_649de4615663a3_71335938',
+  'unifunc' => 'content_64a0253d1cd077_14978100',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f3cea33765f9a3c89264fc8414d455efa59646f7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\ShopMainView.tpl',
-      1 => 1688069215,
+      1 => 1688216884,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_649de4615663a3_71335938 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a0253d1cd077_14978100 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektStudia\\lib\\smarty\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE HTML>
@@ -34,8 +34,10 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektSt
 		<title>Massively by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -67,10 +69,13 @@ logout" class="button primary large">Wyloguj</a>
 loginShow" class="button primary large">Zaloguj</a>
 							<?php }?>
                             <?php if (Core\RoleUtils::inRole("admin")) {?>
-                            
                                 <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 addProductShow">Dodaj Produkt</a></li>
-                            <?php }?>                           
+                            <?php }?>  
+							 <?php if (Core\RoleUtils::inRole("user")) {?>
+                                <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+showOrder">Koszyk</a></li>
+                            <?php }?>                         
 						</ul>
 					</nav>
 

@@ -27,4 +27,8 @@ Utils::addRoute('editList',      'EditProductController');
 Utils::addRoute('gameEdit',      'EditProductController');
 Utils::addRoute('gameDelete',     'EditProductController');
 Utils::addRoute('gameSave',     'EditProductController');
-//Utils::addRoute('action_name', 'controller_class_name');
+Utils::addRoute('createOrder',     'OrderProductController');
+Utils::addRoute('showOrder',     'OrderProductController');
+Utils::addRoute('removeOrder',     'OrderProductController');
+Utils::addRoute('buyOrder',     'OrderProductController');
+//Utils::addRoute('action_name', 'controller_class_name');createOrder

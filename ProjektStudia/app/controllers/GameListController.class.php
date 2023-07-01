@@ -21,6 +21,7 @@ class GameListController {
     {        
         try{
 			$this->records = App::getDB()->select("game",[
+                "id",
                 "name",
                 "description",
                 "price",

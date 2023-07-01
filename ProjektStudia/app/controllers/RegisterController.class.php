@@ -19,26 +19,31 @@ class RegisterController {
     }
 
     public function validateUser() {
-
-        // $this->form->login = ParamUtils::getFromRequest('login', true, 'Błędne wywołanie aplikacji login');
-        // $this->form->pass = ParamUtils::getFromRequest('password', true, 'Błędne wywołanie aplikacji pass');
-
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->pass = ParamUtils::getFromRequest('password');
-
+    
         if (App::getMessages()->isError())
             return false;
-
-        // 1. sprawdzenie czy wartości wymagane nie są puste
+    
+        // Sprawdzenie czy wartości wymagane nie są puste
         if (empty(trim($this->form->login))) {
             Utils::addErrorMessage('Wprowadź login');
         }
         if (empty(trim($this->form->pass))) {
             Utils::addErrorMessage('Wprowadź hasło');
         }
-        if (App::getMessages()->isError())
-            return false;
-
+    
+        if (!App::getMessages()->isError()) {
+            // Sprawdzenie czy podany login już istnieje w bazie danych
+            $exists = App::getDB()->has("user", [
+                "login" => $this->form->login
+            ]);
+    
+            if ($exists) {
+                Utils::addErrorMessage('Podany login jest już zajęty');
+            }
+        }
+    
         return !App::getMessages()->isError();
     }
 
