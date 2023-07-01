@@ -25,6 +25,8 @@
 					<div id="main">
 
                     <h2>Zamówione gry</h2>
+					<p>W koszyku w naszym sklepie GameWorld znajdziesz wszystkie Twoje wybrane gry w jednym miejscu. To idealne miejsce, aby dokonać swojego zamówienia i rozpocząć swoją przygodę w świecie gier. </br>
+					Jeśli jednak z jakiegoś powodu zdecydujesz się na zmianę planów, nie martw się! W koszyku masz również możliwość usunięcia swojego zamówienia. Wystarczy kliknąć odpowiedni przycisk, aby usunąć wybrane gry i dostosować swój wybór.</p>
                         <div>
                             <table>
                                 <thead>
@@ -51,7 +53,7 @@
                                 Suma całkowita {$sum} zł </br>
                             <a class="button primary large" href="{$conf->action_root}buyOrder">Zakup</a>
                             {else if $sum == 0}
-                                <a class="button primary large" href="{$conf->action_root}gameListShow">Idź coś kupić</a>
+                                <a class="button primary large" href="{$conf->action_root}gameListShow">Pusty koszyk? Lista gier tutaj!</a>
                             {/if}
                             
                            

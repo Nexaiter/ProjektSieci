@@ -53,15 +53,15 @@
 							<article class="post featured">
 								<header class="major">
 									<span class="date">{$smarty.now|date_format}</span>
-									<h2>Lista oferowanych gier<br />									
+									<h2>Lista oferowanych gier</h2><br />	
+									<p>Gotowe do odkrycia nowych światów i przygód? W GameWorld czeka na Ciebie niezwykła kolekcja gier, które przeniosą Cię w najbardziej ekscytujące i fascynujące miejsca. Niezależnie od tego, czy jesteś fanem akcji, przygód, strategii czy sportu, mamy coś specjalnie dla Ciebie!</p>	
+									<p>Nie trać czasu i sprawdź naszą pełną kolekcję gier! Znajdziesz je wszystkie na naszej responsywnej stronie internetowej. Zamów już dziś i gotuj się na niezapomniane przygody, które czekają na Ciebie.</p>							
 								</header>
-                                <a  class="image main"></a>
-
 							</article>
 
 							<div class="bottom-margin">
 							<form class="pure-form pure-form-stacked" action="{$conf->action_url}gameSearch">
-							 <legend>Opcje wyszukiwania</legend>
+							 <legend>Wyszukaj swoją grę!</legend>
 							  <fieldset>							
 								<input type="text" placeholder="Nazwa" name="name" value="" />
 
@@ -84,20 +84,9 @@
 										<li><a class="button primary large" href="{$conf->action_root}createOrder/{$g['id']}">Zamów</a></li>
 									{/if} 
                                 </ul>
-
-
-								
 								</article>
                              {/foreach}
-
-								
 							</section>
-
-						<!-- Footer -->
-							<footer>
-							
-							</footer>
-
 					</div>
 
 				<!-- Footer -->

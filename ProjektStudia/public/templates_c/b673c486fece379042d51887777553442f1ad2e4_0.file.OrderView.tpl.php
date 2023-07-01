@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-07-01 16:52:12
+/* Smarty version 4.3.0, created on 2023-07-01 21:53:37
   from 'C:\xampp\htdocs\ProjektStudia\app\views\OrderView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64a03d9c877e70_35729980',
+  'unifunc' => 'content_64a08441a58067_04445820',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b673c486fece379042d51887777553442f1ad2e4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\OrderView.tpl',
-      1 => 1688223131,
+      1 => 1688241216,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64a03d9c877e70_35729980 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a08441a58067_04445820 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -53,6 +53,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 					<div id="main">
 
                     <h2>Zamówione gry</h2>
+					<p>W koszyku w naszym sklepie GameWorld znajdziesz wszystkie Twoje wybrane gry w jednym miejscu. To idealne miejsce, aby dokonać swojego zamówienia i rozpocząć swoją przygodę w świecie gier. </br>
+					Jeśli jednak z jakiegoś powodu zdecydujesz się na zmianę planów, nie martw się! W koszyku masz również możliwość usunięcia swojego zamówienia. Wystarczy kliknąć odpowiedni przycisk, aby usunąć wybrane gry i dostosować swój wybór.</p>
                         <div>
                             <table>
                                 <thead>
@@ -94,14 +96,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 buyOrder">Zakup</a>
                             <?php } elseif ($_smarty_tpl->tpl_vars['sum']->value == 0) {?>
                                 <a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-gameListShow">Idź coś kupić</a>
+gameListShow">Pusty koszyk? Lista gier tutaj!</a>
                             <?php }?>
                             
                            
                         </div>
                         
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_136816176964a03d9c874068_32552467', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_160682746164a08441a545a8_04132386', 'messages');
 ?>
 
 				
@@ -145,12 +147,12 @@ shopMainView">Powrót</a>
 	</body>
 </html><?php }
 /* {block 'messages'} */
-class Block_136816176964a03d9c874068_32552467 extends Smarty_Internal_Block
+class Block_160682746164a08441a545a8_04132386 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'messages' => 
   array (
-    0 => 'Block_136816176964a03d9c874068_32552467',
+    0 => 'Block_160682746164a08441a545a8_04132386',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

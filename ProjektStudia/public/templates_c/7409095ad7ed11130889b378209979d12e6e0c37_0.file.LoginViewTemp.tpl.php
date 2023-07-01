@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-28 12:44:12
+/* Smarty version 4.3.0, created on 2023-07-01 21:57:06
   from 'C:\xampp\htdocs\ProjektStudia\app\views\LoginViewTemp.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_649c0efc88df86_95475789',
+  'unifunc' => 'content_64a08512a64154_67831250',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7409095ad7ed11130889b378209979d12e6e0c37' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\LoginViewTemp.tpl',
-      1 => 1687949051,
+      1 => 1688241425,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_649c0efc88df86_95475789 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a08512a64154_67831250 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -77,7 +77,7 @@ shopMainShow">Powrót</a>
                 </div>
                     
 					<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1133163824649c0efc886240_78215804', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_114672278264a08512a5c158_11196146', 'messages');
 ?>
 
 				</div>
@@ -88,12 +88,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1133163824649c0efc
 </div>
 <?php }
 /* {block 'messages'} */
-class Block_1133163824649c0efc886240_78215804 extends Smarty_Internal_Block
+class Block_114672278264a08512a5c158_11196146 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'messages' => 
   array (
-    0 => 'Block_1133163824649c0efc886240_78215804',
+    0 => 'Block_114672278264a08512a5c158_11196146',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

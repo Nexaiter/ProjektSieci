@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-07-01 15:08:13
+/* Smarty version 4.3.0, created on 2023-07-01 22:00:08
   from 'C:\xampp\htdocs\ProjektStudia\app\views\ShopMainView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64a0253d1cd077_14978100',
+  'unifunc' => 'content_64a085c8b8e2f3_04134539',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f3cea33765f9a3c89264fc8414d455efa59646f7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\ShopMainView.tpl',
-      1 => 1688216884,
+      1 => 1688241607,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64a0253d1cd077_14978100 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a085c8b8e2f3_04134539 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektStudia\\lib\\smarty\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE HTML>
@@ -87,13 +87,22 @@ showOrder">Koszyk</a></li>
 								<header class="major">
 									<span class="date"><?php echo smarty_modifier_date_format(time());?>
 </span>
-									<h2><a href="#">Strona główna<br />
+									<h2>Game World<br />
 									</a></h2>
-									<p>Jakis glowny opis</p>
+									<p>Witaj w GameWorld - Twoim pierwszym przystanku w świecie gier! Jesteśmy dynamicznym sklepem internetowym, który oferuje szeroki wybór gier dla różnych platform, dostarczając niezapomniane doznania dla pasjonatów rozrywki w każdym wieku. Nasza misja polega na zapewnieniu klientom najnowszych tytułów, klasycznych hitów i wyjątkowych ekskluzywności, aby zaspokoić nawet najbardziej wymagające gusta graczy.</p>
 								</header>
 								<a  class="image main"><img src="https://www.052b.pl/wp-content/uploads/2019/05/projekt-sklepu-internetowego.png" alt="" /></a>
 								
+								<h2>Game World<br />
+									</a></h2>
+									<p>W GameWorld oferujemy kompleksową gamę usług związanych z sprzedażą gier. Nasze szerokie portfolio obejmuje gry na konsole, komputery PC oraz urządzenia przenośne. Z nami możesz być pewien, że znajdziesz najgorętsze nowości na rynku, od fascynujących przygodowych tytułów po intensywne gry akcji, strategie, symulatory, sportowe i wiele więcej.</p>
+									<p>Nasza pasja do gier jest nieodłączną częścią naszego DNA, dlatego dbamy o to, aby nasza oferta była zawsze aktualna i różnorodna. Współpracujemy z renomowanymi wydawcami i producentami, aby dostarczać Ci gry od najlepszych twórców branży.</p>
+									<p>W GameWorld dbamy również o wygodę naszych klientów. Nasza responsywna strona internetowa umożliwia łatwe i intuicyjne przeglądanie katalogu gier, proste zamawianie i szybką dostawę. Zapewniamy również pomoc techniczną, gdybyś potrzebował wsparcia w instalacji lub rozwiązywaniu problemów z grami.</p>
+									<p>Dołącz do naszej społeczności graczy i odkryj nieograniczone możliwości, jakie oferuje świat gier. GameWorld to miejsce, gdzie Twoje marzenia o epickich przygodach i niesamowitych wyzwaniach stają się rzeczywistością.</p>
 							</article>
+
+
+									
 
 						<!-- Posts -->
                         <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isMessage()) {?>
@@ -128,16 +137,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
+								<p>Uniwersytet Śląski w Katowicach<br />
+								Bankowa 12, 40-007 Katowice</p>
 							</section>
 							<section>
 								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
+								<p>(12)297345</a></p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p>totallynot@sus.code.com</a></p>
 							</section>						
 						</section>
 					</footer>

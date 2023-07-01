@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-07-01 12:50:58
+/* Smarty version 4.3.0, created on 2023-07-01 22:00:37
   from 'C:\xampp\htdocs\ProjektStudia\app\views\GameListView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64a00512cd1340_76866266',
+  'unifunc' => 'content_64a085e55ba297_69195201',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '197ff40672cd8b8444f22781d09f21ab04ff7407' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\GameListView.tpl',
-      1 => 1688208657,
+      1 => 1688241636,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64a00512cd1340_76866266 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a085e55ba297_69195201 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektStudia\\lib\\smarty\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE HTML>
@@ -84,16 +84,16 @@ addProductShow">Dodaj Produkt</a></li>
 								<header class="major">
 									<span class="date"><?php echo smarty_modifier_date_format(time());?>
 </span>
-									<h2>Lista oferowanych gier<br />									
+									<h2>Lista oferowanych gier</h2><br />	
+									<p>Gotowe do odkrycia nowych światów i przygód? W GameWorld czeka na Ciebie niezwykła kolekcja gier, które przeniosą Cię w najbardziej ekscytujące i fascynujące miejsca. Niezależnie od tego, czy jesteś fanem akcji, przygód, strategii czy sportu, mamy coś specjalnie dla Ciebie!</p>	
+									<p>Nie trać czasu i sprawdź naszą pełną kolekcję gier! Znajdziesz je wszystkie na naszej responsywnej stronie internetowej. Zamów już dziś i gotuj się na niezapomniane przygody, które czekają na Ciebie.</p>							
 								</header>
-                                <a  class="image main"></a>
-
 							</article>
 
 							<div class="bottom-margin">
 							<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 gameSearch">
-							 <legend>Opcje wyszukiwania</legend>
+							 <legend>Wyszukaj swoją grę!</legend>
 							  <fieldset>							
 								<input type="text" placeholder="Nazwa" name="name" value="" />
 
@@ -127,22 +127,11 @@ createOrder/<?php echo $_smarty_tpl->tpl_vars['g']->value['id'];?>
 ">Zamów</a></li>
 									<?php }?> 
                                 </ul>
-
-
-								
 								</article>
                              <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-
-								
 							</section>
-
-						<!-- Footer -->
-							<footer>
-							
-							</footer>
-
 					</div>
 
 				<!-- Footer -->
