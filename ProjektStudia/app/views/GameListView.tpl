@@ -23,19 +23,28 @@
 					</header>
 
 				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-                        <li class="active"><a href="{$conf->action_root}shopMainView">Strona główna</a></li>
-                        <li class="active"><a href="{$conf->action_root}gameListShow">Lista gier</a></li>
-						</ul>
-                        
-						<ul class="icons">
-                            <li><a class="button primary large" href="{$conf->action_root}registerShow">Zarejestruj</a></li>
-                            <li><a class="button primary large" href="{$conf->action_root}loginShow">Zaloguj sie</a></li>
-                            <li><a class="button primary large" href="{$conf->action_root}addProductShow">Dodaj Produkt</a></li>
-
-						</ul>
-					</nav>
+				<nav id="nav">
+				<ul class="links">
+					<li class="active"><a href="{$conf->action_root}shopMainView">Strona główna</a></li>
+					<li class="active"><a href="{$conf->action_root}gameListShow">Lista gier</a></li>
+					
+				</ul>
+				
+				
+				<ul class="icons">
+					{* <li><a class="button primary large" href="{$conf->action_root}registerShow">Zarejestruj</a></li>
+					<li><a class="button primary large" href="{$conf->action_root}loginShow">Zaloguj sie</a></li>    *}
+					{if count($conf->roles)>0}
+						<a href="{$conf->action_root}logout" class="button primary large">Wyloguj</a>
+					{else}	
+						<a href="{$conf->action_root}loginShow" class="button primary large">Zaloguj</a>
+					{/if}
+					{if Core\RoleUtils::inRole("admin")}
+					
+						<li><a class="button primary large" href="{$conf->action_root}addProductShow">Dodaj Produkt</a></li>
+					{/if}                           
+				</ul>
+			</nav>
 
 				<!-- Main -->
 					<div id="main">
@@ -49,6 +58,18 @@
                                 <a  class="image main"></a>
 
 							</article>
+
+							<div class="bottom-margin">
+							<form class="pure-form pure-form-stacked" action="{$conf->action_url}gameSearch">
+							 <legend>Opcje wyszukiwania</legend>
+							  <fieldset>							
+								<input type="text" placeholder="Nazwa" name="name" value="" />
+
+
+								<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+							  </fieldset>
+							</form>
+						</div>
 
 						<!-- Posts -->
 							<section class="posts">

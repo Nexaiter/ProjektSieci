@@ -1,4 +1,4 @@
-{extends file="main.tpl"}
+{* {extends file="main.tpl"}
 
 {block name=top}
 <form action="{$conf->action_root}login" method="post" class="pure-form pure-form-aligned bottom-margin">
@@ -29,4 +29,4 @@
     <a class="pure-button button-success" href="{$conf->action_root}userList"> userList</a>
     </div>	
 
-{/block}
+{/block} *}

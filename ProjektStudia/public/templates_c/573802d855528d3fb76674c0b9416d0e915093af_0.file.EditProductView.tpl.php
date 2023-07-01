@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-28 22:44:25
+/* Smarty version 4.3.0, created on 2023-07-01 10:40:52
   from 'C:\xampp\htdocs\ProjektStudia\app\views\EditProductView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_649c9ba9056045_74269258',
+  'unifunc' => 'content_649fe6943be747_17898935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '573802d855528d3fb76674c0b9416d0e915093af' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\EditProductView.tpl',
-      1 => 1687985060,
+      1 => 1688200850,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_649c9ba9056045_74269258 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649fe6943be747_17898935 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -35,8 +35,10 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 		<title>Massively by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -88,7 +90,7 @@ addProductShow">Powrót</a>
 					</div>
 
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_141913859649c9ba9050252_73430001', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1050814700649fe6943279b1_43415006', 'messages');
 ?>
 
 				<!-- Footer -->
@@ -129,12 +131,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_141913859649c9ba90
 	</body>
 </html><?php }
 /* {block 'messages'} */
-class Block_141913859649c9ba9050252_73430001 extends Smarty_Internal_Block
+class Block_1050814700649fe6943279b1_43415006 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'messages' => 
   array (
-    0 => 'Block_141913859649c9ba9050252_73430001',
+    0 => 'Block_1050814700649fe6943279b1_43415006',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

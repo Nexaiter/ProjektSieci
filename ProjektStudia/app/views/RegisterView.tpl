@@ -1,4 +1,4 @@
-{extends file="main.tpl"}
+{* {extends file="main.tpl"}
 
 {block name=top}
 <form action="{$conf->action_root}register" method="post" class="pure-form pure-form-aligned bottom-margin">
@@ -18,4 +18,4 @@
 		</div>
 	</fieldset>
 </form>	
-{/block}
+{/block} *}

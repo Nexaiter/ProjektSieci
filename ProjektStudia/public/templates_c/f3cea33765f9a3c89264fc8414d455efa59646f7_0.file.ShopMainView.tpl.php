@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-28 23:01:14
+/* Smarty version 4.3.0, created on 2023-06-29 22:06:57
   from 'C:\xampp\htdocs\ProjektStudia\app\views\ShopMainView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_649c9f9ac74431_09494192',
+  'unifunc' => 'content_649de4615663a3_71335938',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f3cea33765f9a3c89264fc8414d455efa59646f7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\ShopMainView.tpl',
-      1 => 1687986073,
+      1 => 1688069215,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_649c9f9ac74431_09494192 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649de4615663a3_71335938 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektStudia\\lib\\smarty\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE HTML>
@@ -59,10 +59,13 @@ gameListShow">Lista gier</a></li>
                         
                         
 						<ul class="icons">
-                            <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-registerShow">Zarejestruj</a></li>
-                            <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-loginShow">Zaloguj sie</a></li>   
+                            							<?php if (count($_smarty_tpl->tpl_vars['conf']->value->roles) > 0) {?>
+								<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+logout" class="button primary large">Wyloguj</a>
+							<?php } else { ?>	
+								<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+loginShow" class="button primary large">Zaloguj</a>
+							<?php }?>
                             <?php if (Core\RoleUtils::inRole("admin")) {?>
                             
                                 <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
@@ -88,7 +91,24 @@ addProductShow">Dodaj Produkt</a></li>
 							</article>
 
 						<!-- Posts -->
-							
+                        <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isMessage()) {?>
+							<div class="messages bottom-margin">
+								<ul>
+									<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getMessages(), 'msg');
+$_smarty_tpl->tpl_vars['msg']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+$_smarty_tpl->tpl_vars['msg']->do_else = false;
+?>
+										<span msg <?php if ($_smarty_tpl->tpl_vars['msg']->value->isError()) {?>error<?php }?> <?php if ($_smarty_tpl->tpl_vars['msg']->value->isWarning()) {?>warning<?php }
+if ($_smarty_tpl->tpl_vars['msg']->value->isInfo()) {?>info<?php }?>"><?php echo $_smarty_tpl->tpl_vars['msg']->value->text;?>
+</span>
+									<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+								</ul>
+							</div>
+						<?php }?>
 
 						<!-- Footer -->
 							<footer>
@@ -123,6 +143,9 @@ addProductShow">Dodaj Produkt</a></li>
 					</div>
 
 			</div>
+
+            
+            
 
 		<!-- Scripts -->
 			<?php echo '<script'; ?>

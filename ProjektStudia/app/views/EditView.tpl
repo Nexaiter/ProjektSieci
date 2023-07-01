@@ -9,8 +9,8 @@
 		<title>Massively by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="{$conf->app_url}/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="{$conf->app_url}/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -25,17 +25,17 @@
 					<div id="main">
 
                     <h2>Edytowanie gry</h2>
-                    <form action="{$conf->action_root}editGame" method="post" class="pure-form pure-form-aligned bottom-margin">
-
+                    <form action="{$conf->action_root}gameSave" method="post" class="pure-form pure-form-aligned bottom-margin">
+                    
                     <fieldset>    
                     <div class="pure-control-group" style="margin-bottom:20px">
                         <label for="name">Nazwa gry: </label>
-                        <input id="login" type="text" name="name">
+                        <input id="login" type="text" name="name" value="{$form->name}">
                     </div>
                                         
                     <div class="pure-control-group">
                     <label for="pass">Cena gry: </label>
-                    <input id="price" type="text" name="price" /><br />
+                    <input id="price" type="text" name="price" value="{$form->price}" /><br />
                     </div>
 
                     <div class="pure-controls">
@@ -44,6 +44,9 @@
                     <div class="col-12">
                         <a class="button primary large" href="{$conf->action_root}addProductShow">Powrót</a>
 					</div>
+                    </fieldset>
+						<input type="hidden" name="id" value="{$form->id}">
+                    </form>
 
                     {block name=messages}
 

@@ -44,11 +44,9 @@ class RegisterController {
 
 
     public function action_registerShow(){
-
         $this->generateView();
 
     }
-
 
     public function action_register()
     {
@@ -61,8 +59,6 @@ class RegisterController {
             ]);
             Utils::addErrorMessage('Pomyślnie zarejestrowano');
             App::getRouter()->redirectTo('login');
-
-        
         }
         catch (PDOException $e) {
             Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas zapisu rekordu');
@@ -70,16 +66,11 @@ class RegisterController {
                 Utils::addErrorMessage($e->getMessage());
         }
     }
-            $this->generateView();
-        
-
+            $this->generateView();       
 }
+
     public function generateView() {
         App::getSmarty()->assign('form', $this->form);
         App::getSmarty()->display('RegisterViewTemp.tpl');
-    }
-
-
-
-    
+    }    
 }

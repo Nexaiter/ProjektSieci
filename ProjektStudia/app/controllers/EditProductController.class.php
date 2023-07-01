@@ -28,6 +28,23 @@ class EditProductController {
         return !App::getMessages()->isError();
     }
 
+
+    public function validateSave(){
+        $this->form->id = ParamUtils::getFromPost('id', true, 'Błędne wywołanie aplikacji');
+        $v = new Validator();
+        
+        $this->form->name = $v->validateFromPost('name', [
+            'required' => true,
+            'required_message' => 'Podaj nazwę',
+        ]);
+
+        $this->form->price = $v->validateFromPost('price', [
+            'required' => true,
+            'required_message' => 'Podaj cenę',
+        ]);
+        return !App::getMessages()->isError();
+    }
+
     public function action_editList()
     {        
         try{
@@ -41,10 +58,8 @@ class EditProductController {
             if (App::getConf()->debug)
                 Utils::addErrorMessage($e->getMessage());
 		}	       
-            $this->generateView();            
+            $this->generateViewList();            
         }
- 
-      
 
     public function action_gameEdit() {
         if ($this->validateEdit()) {
@@ -63,7 +78,7 @@ class EditProductController {
         }
 
         // 3. Wygenerowanie widoku
-        $this->generateView();
+        $this->generateViewEdit();
     }
 
     public function action_gameDelete() {
@@ -83,13 +98,39 @@ class EditProductController {
         // 3. Przekierowanie na stronę listy osób
         App::getRouter()->forwardTo('editList');
     }
+    
 
-
+    public function action_gameSave(){
+        if($this->validateSave()){
+            try{
+                App::getDB()->update("game", [
+                    "name" => $this->form->name,
+                    "price" => $this->form->price,
+                    ], [
+                    "id" => $this->form->id
+                    ]);
+                Utils::addInfoMessage('Pomyślnie zapisano rekord');
+            }
+            catch (\PDOException $e) {
+                Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas zapisu rekordu');
+                if (App::getConf()->debug)
+                    Utils::addErrorMessage($e->getMessage());
+            }
+            App::getRouter()->forwardTo('editProductShow');
+        }
+        else{
+            $this->generateViewEdit();
+        }
+    }
       
-    public function generateView() {
-        App::getSmarty()->assign('form', $this->form);
+    public function generateViewList() {
         App::getSmarty()->assign('game', $this->records);
         App::getSmarty()->display('EditProductView.tpl');
+    }
+
+    public function generateViewEdit() {
+        App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->display('EditView.tpl');
     }
 }
 

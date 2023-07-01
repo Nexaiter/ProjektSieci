@@ -36,9 +36,9 @@ class LoginController {
         $login = $this->form->login;
         $pass = $this->form->pass;
         //nie ma sensu walidować dalej, gdy brak wartości
-        if (App::getMessages()->isError())
+        if (App::getMessages()->isError()){
             return false;
-            
+        }
             try {
                 $this->record = App::getDB()->select("user", [
                     "login",
@@ -60,7 +60,8 @@ class LoginController {
                 Utils::addErrorMessage('Niepoprawny login lub hasło');
             }else{
                 // RoleUtils::addRole($record["permission"]);
-                RoleUtils::addRole("user");
+                RoleUtils::addRole($this->record[0]["permission"]);
+                Utils::addInfoMessage($this->record[0]["permission"]);
             }
             
         return !App::getMessages()->isError();
@@ -74,7 +75,7 @@ class LoginController {
         if ($this->validate()) {
             //zalogowany => przekieruj na główną akcję (z przekazaniem messages przez sesję)
             Utils::addErrorMessage('Poprawnie zalogowano do systemu');
-            App::getRouter()->redirectTo("shopMainShow");
+            App::getRouter()->forwardTo("shopMainShow");
         } else {
             //niezalogowany => pozostań na stronie logowania
             $this->generateView();

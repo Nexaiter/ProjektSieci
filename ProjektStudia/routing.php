@@ -14,6 +14,7 @@ Utils::addRoute('shopMainShow',  'ShopMainController');
 Utils::addRoute('addProductShow',  'AddProductController');
 Utils::addRoute('gameListShow',  'GameListController');
 Utils::addRoute('editProductShow',  'EditProductController');
+Utils::addRoute('gameSearch',  'GameSearchController');
 
 Utils::addRoute('login',         'LoginController');
 Utils::addRoute('logout',        'LoginController');
@@ -25,4 +26,5 @@ Utils::addRoute('gameList',      'GameListController');
 Utils::addRoute('editList',      'EditProductController');
 Utils::addRoute('gameEdit',      'EditProductController');
 Utils::addRoute('gameDelete',     'EditProductController');
+Utils::addRoute('gameSave',     'EditProductController');
 //Utils::addRoute('action_name', 'controller_class_name');

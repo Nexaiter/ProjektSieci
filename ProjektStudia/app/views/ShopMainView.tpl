@@ -32,8 +32,13 @@
                         
                         
 						<ul class="icons">
-                            <li><a class="button primary large" href="{$conf->action_root}registerShow">Zarejestruj</a></li>
-                            <li><a class="button primary large" href="{$conf->action_root}loginShow">Zaloguj sie</a></li>   
+                            {* <li><a class="button primary large" href="{$conf->action_root}registerShow">Zarejestruj</a></li>
+                            <li><a class="button primary large" href="{$conf->action_root}loginShow">Zaloguj sie</a></li>    *}
+							{if count($conf->roles)>0}
+								<a href="{$conf->action_root}logout" class="button primary large">Wyloguj</a>
+							{else}	
+								<a href="{$conf->action_root}loginShow" class="button primary large">Zaloguj</a>
+							{/if}
                             {if Core\RoleUtils::inRole("admin")}
                             
                                 <li><a class="button primary large" href="{$conf->action_root}addProductShow">Dodaj Produkt</a></li>
@@ -57,7 +62,18 @@
 							</article>
 
 						<!-- Posts -->
-							
+                        {if $msgs->isMessage()}
+							<div class="messages bottom-margin">
+								<ul>
+									{foreach $msgs->getMessages() as $msg}
+										{strip}
+											<span msg {if $msg->isError()}error{/if} {if $msg->isWarning()}warning{/if}
+												{if $msg->isInfo()}info{/if}">{$msg->text}</span>
+										{/strip}
+									{/foreach}
+								</ul>
+							</div>
+						{/if}
 
 						<!-- Footer -->
 							<footer>
@@ -92,6 +108,9 @@
 					</div>
 
 			</div>
+
+            
+            
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

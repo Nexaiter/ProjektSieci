@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-28 21:07:35
+/* Smarty version 4.3.0, created on 2023-06-30 20:26:39
   from 'C:\xampp\htdocs\ProjektStudia\app\views\GameListView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_649c84f703cc90_16638235',
+  'unifunc' => 'content_649f1e5fe5d575_64844408',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '197ff40672cd8b8444f22781d09f21ab04ff7407' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ProjektStudia\\app\\views\\GameListView.tpl',
-      1 => 1687975553,
+      1 => 1688149599,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_649c84f703cc90_16638235 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649f1e5fe5d575_64844408 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektStudia\\lib\\smarty\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE HTML>
@@ -48,24 +48,31 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ProjektSt
 					</header>
 
 				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-                        <li class="active"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+				<nav id="nav">
+				<ul class="links">
+					<li class="active"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 shopMainView">Strona główna</a></li>
-                        <li class="active"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+					<li class="active"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 gameListShow">Lista gier</a></li>
-						</ul>
-                        
-						<ul class="icons">
-                            <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-registerShow">Zarejestruj</a></li>
-                            <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-loginShow">Zaloguj sie</a></li>
-                            <li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+					
+				</ul>
+				
+				
+				<ul class="icons">
+										<?php if (count($_smarty_tpl->tpl_vars['conf']->value->roles) > 0) {?>
+						<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+logout" class="button primary large">Wyloguj</a>
+					<?php } else { ?>	
+						<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+loginShow" class="button primary large">Zaloguj</a>
+					<?php }?>
+					<?php if (Core\RoleUtils::inRole("admin")) {?>
+					
+						<li><a class="button primary large" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 addProductShow">Dodaj Produkt</a></li>
-
-						</ul>
-					</nav>
+					<?php }?>                           
+				</ul>
+			</nav>
 
 				<!-- Main -->
 					<div id="main">
@@ -80,6 +87,19 @@ addProductShow">Dodaj Produkt</a></li>
                                 <a  class="image main"></a>
 
 							</article>
+
+							<div class="bottom-margin">
+							<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+gameSearch">
+							 <legend>Opcje wyszukiwania</legend>
+							  <fieldset>							
+								<input type="text" placeholder="Nazwa" name="name" value="" />
+
+
+								<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+							  </fieldset>
+							</form>
+						</div>
 
 						<!-- Posts -->
 							<section class="posts">
